@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mitch_koko/pages/first_page.dart';
+import 'package:mitch_koko/pages/home_page.dart';
+import 'package:mitch_koko/pages/second_page.dart';
+import 'package:mitch_koko/pages/settings_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,21 +22,12 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('My App'),
-            centerTitle: true,
-            backgroundColor: Colors.lightGreen,
-          ),
-          body: GestureDetector(
-            onTap: userTapped,
-            child: Center(
-                child: Container(
-                    height: 200,
-                    width: 200,
-                    color: Colors.deepPurple[200],
-                    child: const Center(child: Text('Tap me!')))),
-          )),
+      home: FirstPage(),
+      routes:{
+        '/firstpage':(context)=>FirstPage(),
+        '/homepage':(context)=>HomePage(),
+        '/settingspage':(context)=>SettingsPage(),
+      }
     );
   }
 }
