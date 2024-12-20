@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mitch_koko/util/todo_tile.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
-  final List<TodoTile> todos = [];
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
+  List<List<dynamic>> todoList = [
+    ['Make Turorial', false],
+    ['Do Exercise', false],
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,9 +25,12 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
-          itemCount: todos.length,
+          itemCount: todoList.length,
           itemBuilder: (context, index) {
-            return todos[index];
+            return TodoTile(
+              taskName: todoList[index][0],
+              taskCompleted: todoList[index][1],
+            );
           },
         ),
       ),
