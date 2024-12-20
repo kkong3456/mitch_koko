@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mitch_koko/pages/counter_page.dart';
+import 'package:mitch_koko/pages/todo_page.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:CounterPage(),
+      home: TodoPage(),
     );
   }
 }
